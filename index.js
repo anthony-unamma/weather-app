@@ -1,5 +1,5 @@
 const api = {
-    key: "022da4ce666be16f918fc81dc5e14ba3",
+    key: apiKey,
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -10,7 +10,6 @@ searchBox.addEventListener('keydown', setQuery);
 function setQuery(event) {
     if (event.key == 'Enter') {
         getData(searchBox.value);
-        console.log(searchBox.value);
     }
 }
 
@@ -23,4 +22,7 @@ function getData(query) {
 
 function displayResults(weather) {
     console.log(weather);
+
+    let cityName = document.querySelector('.city');
+    cityName.innerText = `${weather.name}, ${weather.sys.country}`
 }
