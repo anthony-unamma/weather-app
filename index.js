@@ -39,6 +39,14 @@ function displayResults(weather) {
     //update weather type
     let weatherType = document.querySelector('.weather-value')
     weatherType.innerText = weather.weather[0].main
+
+    //update low temp
+    let lowTemp = document.querySelector('.lo-temp')
+    lowTemp.innerHTML = `${Math.round(weather.main.temp_min)}<span>°C</span>`
+
+    //update high temp
+    let highTemp = document.querySelector('.hi-temp')
+    highTemp.innerHTML = `${Math.round(weather.main.temp_max)}<span>°C</span>`
 }
 
 function dateBuilder(d) {

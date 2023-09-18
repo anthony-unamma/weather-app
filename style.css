@@ -60,6 +60,10 @@ p.lo-temp {
     font-size: 2rem;
 }
 
+p.hi-temp {
+    font-size: 2rem;
+}
+
 .city {
     font-size: 1.5rem;
 }
