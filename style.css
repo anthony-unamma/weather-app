@@ -25,6 +25,15 @@ body {
     justify-content: center;
 }
 
+.weather img {
+    display: none;
+}
+
+.weather-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .hi-lo-value {
     display: flex;
     flex-direction: column;

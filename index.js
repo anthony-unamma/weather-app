@@ -1,5 +1,5 @@
 const api = {
-    key: apiKey,
+    key: "022da4ce666be16f918fc81dc5e14ba3",
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -23,6 +23,33 @@ function getData(query) {
 function displayResults(weather) {
     console.log(weather);
 
+    //update the city name
     let cityName = document.querySelector('.city');
     cityName.innerText = `${weather.name}, ${weather.sys.country}`
+
+    //update the date to current date
+    let now = new Date();
+    let date = document.querySelector('.date');
+    date.innerText = dateBuilder(now);
+
+    //update temperature
+    let temp = document.querySelector('.temp-value')
+    temp.innerText = `${Math.round(weather.main.temp)}`
+
+    //update weather type
+    let weatherType = document.querySelector('.weather-value')
+    weatherType.innerText = weather.weather[0].main
+}
+
+function dateBuilder(d) {
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+    'Friday', 'Saturday'];
+
+    let day = days[d.getDay()]
+    let date = d.getDate()
+    let month = months[d.getMonth()]
+    let year = d.getFullYear()
+    return `${day}, ${date} ${month}, ${year}`
 }
